@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book — CareBridge</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="booking.js"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <span class="logo-icon">🐾👤</span>
+            <span>CareBridge</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#appointments">Appointments</a></li>
+            <li><a href="index.html#services">Services</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main class="booking-container">
+        <div class="booking-wrapper">
+            <div id="emergencyBanner" class="emergency-banner" style="display:none; margin-bottom:1rem; padding:1rem; border-radius:8px; background: linear-gradient(135deg,#fff5f5,#fff1f2); border-left:4px solid #ff6b6b;">
+                <strong>Emergency booking</strong>
+                <p style="margin-top:0.5rem; color:#742a2a; margin-bottom:0;">If this is life-threatening, please go to the nearest clinic. You can request an immediate video call with our on-call team below.</p>
+            </div>
+            <h2>Book a Service</h2>
+            <p class="lead">Schedule pet care or a people-focused session. We'll save your booking locally for demo purposes.</p>
+
+            <form id="bookingForm" class="booking-form">
+                <input type="text" id="fullName" name="fullName" placeholder="Full name" required>
+                <input type="tel" id="contact" name="contact" placeholder="Phone or email" required>
+
+                <select id="serviceType" name="serviceType" required>
+                    <option value="">Select service</option>
+                    <option value="pet">Pet Appointment (Vet / Grooming / Training)</option>
+                    <option value="caretaking">Caretaking (Visits / Support / Respite)</option>
+                </select>
+
+                <!-- Nearby caretakers panel (shown when caretaking is selected) -->
+                <div id="caretakersPanel" class="full-row caretakers-panel" style="display:none; margin-top:0.75rem;">
+                    <h4 style="margin:0 0 .5rem 0;">Nearby Caretakers</h4>
+                    <div id="caretakersList" style="display:grid; gap:0.75rem;"></div>
+                    <div id="selectedCaretaker" style="margin-top:0.75rem; display:none; padding:0.75rem; border-radius:8px; background:#f0f7ff; color:#2d3748;"></div>
+                </div>
+
+                <input type="text" id="petType" name="petType" placeholder="Pet type (dog, cat, etc.)">
+
+                <input type="date" id="date" name="date" required>
+                <input type="time" id="time" name="time" required>
+
+                <textarea id="notes" name="notes" class="full-row" placeholder="Notes or special requests"></textarea>
+
+                <input type="hidden" id="emergencyField" name="emergencyField" value="">
+                <div class="full-row" style="margin-top:0.3rem; display:flex; gap:1rem; align-items:center;">
+                    <label style="display:flex;align-items:center;gap:.5rem;"><input type="checkbox" id="videoCall" name="videoCall"> <span>Request emergency video call now</span></label>
+                    <label style="display:flex;align-items:center;gap:.5rem;"><input type="checkbox" id="eduHealth" name="eduHealth"> <span>Show Education & Health details</span></label>
+                </div>
+
+                <div id="eduHealthInfo" class="full-row" style="display:none; background:#f7fafc; padding:1rem; border-radius:8px;">
+                    <h4 style="margin:0 0 .5rem 0;">Education & Health</h4>
+                    <ul style="margin:0 0 0.5rem 1.25rem; color:#4a5568; line-height:1.6;">
+                        <li>Pet nutrition & diet planning</li>
+                        <li>Vaccination & preventive care schedules</li>
+                        <li>Training modules & behavior guidance</li>
+                        <li>Mental health & enrichment activities</li>
+                        <li>Therapy program outlines and eligibility</li>
+                    </ul>
+                    <p style="margin:0; color:#718096; font-size:0.95rem;">Check this box to include these details with your booking and request expert guidance.</p>
+                </div>
+
+                <div class="full-row booking-actions">
+                    <button type="submit" class="btn btn-primary">Submit Booking</button>
+                    <button type="reset" class="btn">Reset</button>
+                </div>
+            </form>
+
+            <div id="confirmation" class="booking-confirm" role="status"></div>
+            <div id="videoActions" style="margin-top:1rem; display:none;"></div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p style="opacity:0.8;">© 2025 CareBridge — Pets & People</p>
+    </footer>
+</body>
+</html>

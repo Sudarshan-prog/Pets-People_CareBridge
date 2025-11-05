@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pets & People CareBridge</title>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <span class="logo-icon">🐾👤</span>
+            <span>CareBridge</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#appointments">Appointments</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="booking.html">Book</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><button class="emergency-btn" onclick="openEmergency()">Emergency</button></li>
+        </ul>
+    </nav>
+
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Where Pets & People Connect</h1>
+            <p>Building bridges between animal lovers and compassionate care. Your trusted partner in pet wellness and human-animal bond strengthening.</p>
+            <div class="cta-buttons">
+                <button class="btn btn-primary" onclick="scrollToAppointments()">Book Appointment</button>
+                <button class="btn btn-secondary">Learn More</button>
+            </div>
+        </div>
+        <div class="hero-image">
+            <div class="floating-card">
+                <div class="card-icon"></div>
+                <h3 style="margin-bottom: 1rem; color: #2d3748;">Compassionate Care</h3>
+                <p style="color: #4a5568;">Connecting pets with loving families and providing support for both animal and human wellness.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="appointments" id="appointments">
+        <h2 class="section-title">Book Your Appointment</h2>
+        <p class="section-subtitle">Choose the care that's right for you</p>
+        <div class="appointment-cards">
+            <div class="appointment-card">
+                <span class="appointment-icon"></span>
+                <h3>Pet Appointment</h3>
+                <p>Schedule veterinary care, grooming, training, or wellness checkups for your beloved pets. Our expert team is here to ensure your furry friend's health and happiness.</p>
+                <button class="btn" onclick="window.location.href='booking.html?type=pet'">Book Pet Care</button>
+            </div>
+            <div class="appointment-card">
+                <span class="appointment-icon"></span>
+                <h3>Caretaking</h3>
+                <p>Connect with caretakers for animal-assisted support, adoption guidance, pet care education, and community support. Browse nearby caretakers or request a session.</p>
+                <button class="btn" onclick="window.location.href='booking.html?type=caretaking'">Book Caretaking</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="services" id="services">
+        <h2 class="section-title">Our Services</h2>
+        <p class="section-subtitle">Comprehensive care solutions for pets and their people</p>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon"></div>
+                <h3>Health & Wellness</h3>
+                <p>Expert veterinary connections and wellness programs for your furry companions.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon"></div>
+                <h3>Adoption Bridge</h3>
+                <p>Matching rescue animals with loving forever homes through our trusted network.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon"></div>
+                <h3>Education Hub</h3>
+                <p>Resources and training for responsible pet ownership and care best practices.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon"></div>
+                <h3>Support Community</h3>
+                <p>Connect with fellow pet lovers, share experiences, and find emotional support.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon"></div>
+                <h3>Therapy Programs</h3>
+                <p>Animal-assisted therapy connecting pets with people who need companionship.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon"></div>
+                <h3>Premium Care</h3>
+                <p>Specialized services including grooming, boarding, and personalized care plans.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="stats">
+        <h2 class="section-title" style="color: white;">Our Impact</h2>
+        <div class="stats-grid">
+            <div class="stat-item">
+                <div class="stat-number">15K+</div>
+                <div class="stat-label">Pets Helped</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">8K+</div>
+                <div class="stat-label">Happy Families</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">95%</div>
+                <div class="stat-label">Success Rate</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">24/7</div>
+                <div class="stat-label">Support Available</div>
+            </div>
+        </div>
+    </section>
+
+
+    <div class="modal" id="emergencyModal">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeEmergency()">&times;</span>
+            <h2>Emergency Services</h2>
+            <div class="emergency-info">
+                <h3>24/7 Emergency Hotline</h3>
+                <p>1-800-PET-HELP</p>
+            </div>
+            <p>For immediate emergency assistance for your pet, call our hotline or visit the nearest emergency veterinary clinic. Our team is standing by to help.</p>
+            <p style="font-weight: 600; color: #c53030;">If this is a life-threatening emergency, please proceed directly to the nearest emergency vet clinic.</p>
+            <div style="margin-top:1.5rem; display:flex; gap:0.75rem;">
+                <button class="btn btn-primary" style="flex:1" onclick="window.location.href='booking.html?emergency=1&type=pet'">Create Emergency Booking</button>
+                <button class="btn" style="flex:1; background:#fff5f5; color:#742a2a; border-radius:12px;" onclick="window.location.href='booking.html?emergency=1&type=pet&video=1'">Request Video Call</button>
+            </div>
+        </div>
+    </div>
+
+    
+    <div class="modal" id="petModal">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closePetAppointment()">&times;</span>
+            <h2>Book Pet Appointment</h2>
+            <p>Thank you for choosing CareBridge for your pet's care! Our booking system will open shortly.</p>
+            <p style="margin-top: 1rem; color: #4a5568;">Available services:</p>
+            <ul style="margin-left: 1.5rem; color: #4a5568; line-height: 2;">
+                <li>Veterinary Checkups</li>
+                <li>Grooming & Spa</li>
+                <li>Training Sessions</li>
+                <li>Vaccination Services</li>
+            </ul>
+            <button class="btn btn-primary" style="margin-top: 1.5rem; width: 100%;" onclick="closePetAppointment()">Close</button>
+        </div>
+    </div>
+
+    <!-- Caretaking Modal (formerly People Appointment) -->
+    <div class="modal" id="peopleModal">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closePeopleAppointment()">&times;</span>
+            <h2>Caretaking Services</h2>
+            <p>Welcome! Browse nearby caretakers, request caretaking sessions, or access education & health resources.</p>
+
+            <h3 style="margin-top:1rem; color:#2d3748;">Nearby Caretakers</h3>
+            <div style="display:grid; gap:0.75rem; margin-top:0.5rem;">
+                <div style="padding:0.8rem; background:#f7fafc; border-radius:8px; display:flex; justify-content:space-between; align-items:center;">
+                    <div>
+                        <strong>Anna Rivera</strong>
+                        <div style="font-size:0.9rem; color:#718096;">2.1 km • Rating: 4.8</div>
+                    </div>
+                    <div style="display:flex; gap:0.5rem;">
+                        <a class="btn" href="tel:+18001234567">Call</a>
+                        <a class="btn btn-primary" href="mailto:anna@caretakers.example">Email</a>
+                    </div>
+                </div>
+
+                <div style="padding:0.8rem; background:#f7fafc; border-radius:8px; display:flex; justify-content:space-between; align-items:center;">
+                    <div>
+                        <strong>Ben Carter</strong>
+                        <div style="font-size:0.9rem; color:#718096;">3.5 km • Rating:  4.6</div>
+                    </div>
+                    <div style="display:flex; gap:0.5rem;">
+                        <a class="btn" href="tel:+18007654321">Call</a>
+                        <a class="btn btn-primary" href="mailto:ben@caretakers.example">Email</a>
+                    </div>
+                </div>
+
+                <div style="padding:0.8rem; background:#f7fafc; border-radius:8px; display:flex; justify-content:space-between; align-items:center;">
+                    <div>
+                        <strong>CareBridge Team (On-call)</strong>
+                        <div style="font-size:0.9rem; color:#718096;">On-call • Rating:  4.9</div>
+                    </div>
+                    <div style="display:flex; gap:0.5rem;">
+                        <a class="btn" href="tel:+1800-PET-HELP">Call</a>
+                        <a class="btn btn-primary" href="booking.html?emergency=1&type=caretaking">Request Care</a>
+                    </div>
+                </div>
+            </div>
+
+            <h3 style="margin-top:1rem; color:#2d3748;">Available caretaking sessions</h3>
+            <ul style="margin-left: 1.5rem; color: #4a5568; line-height: 2;">
+                <li>Animal-assisted support & visits</li>
+                <li>Adoption guidance & counseling</li>
+                <li>Care plans and compassionate respite</li>
+                <li>Education & health resources</li>
+            </ul>
+
+            <button class="btn btn-primary" style="margin-top: 1.5rem; width: 100%;" onclick="closePeopleAppointment()">Close</button>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p style="font-size: 1.1rem; margin-bottom: 1rem;"> Pets & People CareBridge</p>
+        <p style="opacity: 0.8;">Building stronger bonds between animals and humans, one connection at a time.</p>
+        <p style="margin-top: 2rem; opacity: 0.6;">© 2025 CareBridge. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function scrollToAppointments() {
+            document.getElementById('appointments').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function openEmergency() {
+            document.getElementById('emergencyModal').classList.add('active');
+        }
+
+        function closeEmergency() {
+            document.getElementById('emergencyModal').classList.remove('active');
+        }
+
+        function openPetAppointment() {
+            document.getElementById('petModal').classList.add('active');
+        }
+
+        function closePetAppointment() {
+            document.getElementById('petModal').classList.remove('active');
+        }
+
+        function openPeopleAppointment() {
+            document.getElementById('peopleModal').classList.add('active');
+        }
+
+        function closePeopleAppointment() {
+            document.getElementById('peopleModal').classList.remove('active');
+        }
+
+        // Close modals when clicking outside
+        window.onclick = function(event) {
+            if (event.target.classList.contains('modal')) {
+                event.target.classList.remove('active');
+            }
+        }
+    </script>
+</body>
+</html>
